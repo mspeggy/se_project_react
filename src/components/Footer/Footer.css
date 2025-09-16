@@ -1,0 +1,23 @@
+.footer {
+  font-family: Cabinet Grotesk, Arial, Helvetica, sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 16px 40px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  z-index: 1000;
+} 
+
+.footer__text .footer__year {
+  margin: 0;
+}
+
+  

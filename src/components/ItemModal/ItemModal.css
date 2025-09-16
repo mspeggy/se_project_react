@@ -1,0 +1,12 @@
+.modal__close {
+  background-image: url(../../assets/preview.png);
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+ 
+}
