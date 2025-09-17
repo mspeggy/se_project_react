@@ -1,4 +1,4 @@
-import "./weatherCard.css";
+import "./WeatherCard.css";
 import { weatherOptions, defaultWeatherOption } from "../../utils/constants";
 
 
