@@ -1,5 +1,5 @@
-.modal__close {
-  background-image: url(../../assets/preview.png);
+.item-modal__close {
+  background-image: url(../../assets/preview-btn.png);
   width: 23px;
   height: 23px;
   position: absolute;
@@ -8,5 +8,6 @@
   border: none;
   padding: 0;
   cursor: pointer;
- 
 }
+
+
