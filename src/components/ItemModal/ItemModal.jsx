@@ -7,7 +7,7 @@ function ItemModal({ activeModal, onClose, card }) {
         <button onClick={onClose} type="button" className="item-modal__close"
           aria-label="Close preview modal"
         ></button>
-        <img src={card.link} alt="card.name" className="modal__image" />
+        <img src={card.link} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>

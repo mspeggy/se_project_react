@@ -1,5 +1,7 @@
 .item-modal__close {
   background-image: url(../../assets/preview-btn.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
   width: 23px;
   height: 23px;
   position: absolute;
@@ -10,4 +12,10 @@
   cursor: pointer;
 }
 
-
+.modal__footer {
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 24px;
+}

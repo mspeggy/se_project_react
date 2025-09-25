@@ -11,6 +11,7 @@ import Footer from "../Footer/Footer";
 
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 
+
 function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems); 
   const [weatherData, setWeatherData] = useState({
@@ -76,7 +77,7 @@ function App() {
         <label htmlFor="imageUrl" className="modal__label">
           Image
           <input
-            type="text"
+            type="url"
             className="modal__input"
             id="imageUrl"
             placeholder="Image URL"
