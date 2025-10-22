@@ -1,12 +1,3 @@
-.cards__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  gap: 21px;
-}
-
 .cards {
   flex-grow: 1;
   font-family:  "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
@@ -14,4 +5,19 @@
   font-style: bold;
   font-size: 20px;
   line-height: 100%;
+  margin-bottom: 20px;
 }
+
+.cards__list {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, 323px);
+  padding: 0;
+  grid-gap: 21px;
+}
+
+.card__clothes {
+  display: flex;
+  flex-direction: column;
+}
+
+

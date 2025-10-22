@@ -1,0 +1,24 @@
+.sidebar__user-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar__username {
+  margin: 0;
+  white-space: nowrap; 
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+}
