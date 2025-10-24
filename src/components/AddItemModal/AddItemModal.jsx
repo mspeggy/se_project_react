@@ -10,18 +10,14 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   const { values, handleChange, setValues } = useForm(defaultValues);
 
-  function handleSubmit(evt) {
+  const resetForm = () => {setValues(defaultValues);}
+  const handleSubmit = (evt) => {
     evt.preventDefault();
-    onAddItem(values)
-      .then(() => {
-        // empty the inputs
-        setValues(defaultValues);
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Could not create new clothing item.");
-      });
-  }
+    onAddItem(values, resetForm)
+      
+      };
+  
+
 
   return (
     <ModalWithForm
@@ -103,3 +99,18 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 };
 
 export default AddItemModal;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+

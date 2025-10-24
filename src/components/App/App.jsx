@@ -40,7 +40,7 @@ const App = () => {
     setActiveModal("add-garment");
   };
 
-  const onAddItem = (inputValues) => {
+  const onAddItem = (inputValues, resetForm) => {
     const newCardData = {
       name: inputValues.name,
       imageUrl: inputValues.imageUrl,
@@ -49,16 +49,14 @@ const App = () => {
 
     return addItem(newCardData).then((data) => {
       setClothingItems([data, ...clothingItems]);
-      closeAllModals();
+      closeActiveModal();
+      resetForm()
     });
-  };
-
-  const closeAllModals = () => {
-    setActiveModal("");
   };
 
   const closeActiveModal = () => {
     setActiveModal("");
+    setSelectedCard({}); // clear preview selection
   };
 
   useEffect(() => {
@@ -86,7 +84,7 @@ const App = () => {
         setClothingItems((prevItems) =>
           prevItems.filter((item) => item._id !== id)
         );
-        closeAllModals();
+        closeActiveModal();
       })
       .catch((err) => console.error("Error deleting item:", err));
   };
@@ -115,6 +113,7 @@ const App = () => {
                 <Profile
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                   addItemClick={handleAddClick}
                 />
               }
             />

@@ -8,7 +8,7 @@ function ItemModal({ activeModal, onClose, card, onDeleteItem }) {
   };
 
   return (
-    <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
+    <div className={`modal ${activeModal === "preview" ? "modal_opened":""}`}>
       <div className="modal__content modal__content_type_image">
         <button onClick={onClose} type="button" className="item-modal__close"
           aria-label="Close preview modal"

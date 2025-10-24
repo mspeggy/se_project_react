@@ -12,6 +12,7 @@
 
 .clothes-section__button {
   border: none;
+  cursor: pointer;
   
 }
 

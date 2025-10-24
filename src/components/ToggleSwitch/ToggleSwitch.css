@@ -7,7 +7,7 @@
   overflow: hidden;
   position: relative;
   display: inline-block;
-  top: 7px;
+  top: 0;
 }
 
 .toggle-switch__checkbox {
