@@ -8,20 +8,52 @@
   cursor: pointer;
 }
 
-.card__name {
-  font-family:  "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-style: bold;
-  font-weight: 700;
-  line-height: 20px;
-  position: absolute;
-  top: 15px;
-  margin: 0;
-
-  background-color: #ffffff;
-}
 
 .card__image {
   width: 100%;
   border-radius: 20px;
+  cursor: pointer
 }
+
+/* Container for name + heart */
+.card__top {
+  position: absolute;
+  width: 100%;
+  padding: 6px 0;
+  display: flex;
+  top: 15px;
+  justify-content: center;
+  gap: 10px;
+  
+}
+
+ /*Name centered */
+.card__name {
+  font-family:  "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  max-width: 200px;
+  margin: 0;
+}
+
+/* Heart positioned to the right */
+.card__heart {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-image: url(../../images/heart.svg);
+  width: 23px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  opacity: 40%;
+  max-width: 353px;
+  background-position: center;
+}
+
+
+

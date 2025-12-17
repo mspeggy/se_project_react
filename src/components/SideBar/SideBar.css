@@ -1,3 +1,10 @@
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .sidebar__user-container {
   display: flex;
   flex-direction: row;
@@ -7,18 +14,52 @@
   gap: 16px;
 }
 
-.sidebar__avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .sidebar__username {
   margin: 0;
-  white-space: nowrap; 
+  white-space: nowrap;
   font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-style: bold;
   font-size: 20px;
+}
+
+.sidebar__actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* makes full width inside sidebar */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.sidebar__button {
+  width: 100%;
+  padding: 10px 12px;
+  background: #f3f3f3;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: -20px;
+}
+
+.sidebar__button:hover {
+  background: #e8e8e8;
+}
+
+.sidebar__signout {
+  color: black;
+}
+
+/* Avatar fallback */
+.sidebar__avatar-placeholder {
+  width: 56px;
+  height: 56px;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
 }

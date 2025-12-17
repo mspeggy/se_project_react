@@ -8,24 +8,45 @@ const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
+/* ---------- PUBLIC ---------- */
+
+// GET /items (no auth)
 export const getItems = () =>
   fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
 
-export const addItem = ({ name, imageUrl, weather }) => {
+/* ---------- PROTECTED ---------- */
+
+// POST /items
+export const addItem = (item, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers,
-    body: JSON.stringify({
-      name,
-      imageUrl,
-      weather,
-    }),
+    headers: {
+      ...headers,
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(item),
   }).then(handleServerResponse);
 };
 
-export const removeItem = (itemID) => {
-  return fetch(`${baseUrl}/items/${itemID}`, {
+// DELETE /items/:id
+export const removeItem = (itemId, token) => {
+  return fetch(`${baseUrl}/items/${itemId}`, {
     method: "DELETE",
-    headers,
+    headers: {
+      ...headers,
+      authorization: `Bearer ${token}`,
+    },
+  }).then(handleServerResponse);
+};
+
+//  PATCH /users/me (Edit profile)
+export const updateUser = ({ name, avatar }, token) => {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      ...headers,
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, avatar }),
   }).then(handleServerResponse);
 };

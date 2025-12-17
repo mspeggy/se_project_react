@@ -13,6 +13,7 @@ Currently, two official plugins are available:
  Check out [this video](https://www.loom.com/share/7c0a98f6c6384fccbb64c079d930626d?sid=eddc796b-b8de-4c12-9953-a5f5cd887b64), where I describe my project and some challenges I faced while building it.
 
  
+ ## A link to my backend repository
 
- 
+ https://github.com/mspeggy/se_project_express.git
  
