@@ -4,49 +4,43 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-const handleServerResponse = (res) => {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-};
+export const handleServerResponse = (res) =>
+  res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 
 /* ---------- PUBLIC ---------- */
-
-// GET /items (no auth)
 export const getItems = () =>
   fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
 
 /* ---------- PROTECTED ---------- */
-
-// POST /items
-export const addItem = (item, token) => {
-  return fetch(`${baseUrl}/items`, {
+export const addItem = (item, token) =>
+  fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers: {
-      ...headers,
-      authorization: `Bearer ${token}`,
-    },
+    headers: { ...headers, authorization: `Bearer ${token}` },
     body: JSON.stringify(item),
   }).then(handleServerResponse);
-};
 
-// DELETE /items/:id
-export const removeItem = (itemId, token) => {
-  return fetch(`${baseUrl}/items/${itemId}`, {
+export const removeItem = (itemId, token) =>
+  fetch(`${baseUrl}/items/${itemId}`, {
     method: "DELETE",
-    headers: {
-      ...headers,
-      authorization: `Bearer ${token}`,
-    },
+    headers: { ...headers, authorization: `Bearer ${token}` },
   }).then(handleServerResponse);
-};
 
-//  PATCH /users/me (Edit profile)
-export const updateUser = ({ name, avatar }, token) => {
-  return fetch(`${baseUrl}/users/me`, {
+export const updateUser = ({ name, avatar }, token) =>
+  fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
-    headers: {
-      ...headers,
-      authorization: `Bearer ${token}`,
-    },
+    headers: { ...headers, authorization: `Bearer ${token}` },
     body: JSON.stringify({ name, avatar }),
   }).then(handleServerResponse);
-};
+
+/* ---------- LIKES ---------- */
+export const addCardLike = (itemId, token) =>
+  fetch(`${baseUrl}/items/${itemId}/likes`, {
+    method: "PUT",
+    headers: { ...headers, authorization: `Bearer ${token}` },
+  }).then(handleServerResponse);
+
+export const removeCardLike = (itemId, token) =>
+  fetch(`${baseUrl}/items/${itemId}/likes`, {
+    method: "DELETE",
+    headers: { ...headers, authorization: `Bearer ${token}` },
+  }).then(handleServerResponse);

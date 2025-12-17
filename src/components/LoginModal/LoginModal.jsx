@@ -2,7 +2,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../../hooks/useForm";
 import { useState } from "react";
 
-const LoginModal = ({ isOpen, onClose, onLogin, onSwitchToRegister, }) => {
+const LoginModal = ({ isOpen, onClose, onLogin,  }) => {
   const { values, handleChange } = useForm({
     email: "",
     password: "",
@@ -25,8 +25,9 @@ const LoginModal = ({ isOpen, onClose, onLogin, onSwitchToRegister, }) => {
       onSubmit={handleSubmit}
       buttonText="Log In"
       secondaryButtonText="or Register"
-      secondaryButtonAction={onSwitchToRegister}
+      secondaryButtonAction={()=>console.log("buttonClick")}
     >
+    
      
       <input
         type="email"

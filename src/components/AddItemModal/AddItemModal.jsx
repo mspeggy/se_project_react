@@ -10,14 +10,13 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   const { values, handleChange, setValues } = useForm(defaultValues);
 
-  const resetForm = () => {setValues(defaultValues);}
+  const resetForm = () => {
+    setValues(defaultValues);
+  };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onAddItem(values, resetForm)
-      
-      };
-  
-
+    onAddItem(values, resetForm);
+  };
 
   return (
     <ModalWithForm
@@ -99,18 +98,3 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 };
 
 export default AddItemModal;
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-

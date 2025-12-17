@@ -9,7 +9,8 @@ export default function Profile({
   onCardClick,
   addItemClick,
   onSignOut,
-  onEditProfile, 
+  onEditProfile,
+  onCardLike,
 }) {
   const currentUser = useContext(CurrentUserContext);
 
@@ -19,14 +20,14 @@ export default function Profile({
         name={currentUser?.name}
         avatar={currentUser?.avatar}
         onSignOut={onSignOut}
-        handleEditClick={onEditProfile} 
-        
+        handleEditClick={onEditProfile}
       />
 
       <ClothesSection
         onCardClick={onCardClick}
         clothingItems={clothingItems}
         onAddClick={addItemClick}
+        onCardLike={onCardLike}
       />
     </section>
   );

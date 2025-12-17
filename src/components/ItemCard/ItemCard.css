@@ -8,11 +8,10 @@
   cursor: pointer;
 }
 
-
 .card__image {
   width: 100%;
   border-radius: 20px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 /* Container for name + heart */
@@ -24,12 +23,11 @@
   top: 15px;
   justify-content: center;
   gap: 10px;
-  
 }
 
- /*Name centered */
+/*Name centered */
 .card__name {
-  font-family:  "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
   background-color: #ffffff;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -54,6 +52,3 @@
   max-width: 353px;
   background-position: center;
 }
-
-
-

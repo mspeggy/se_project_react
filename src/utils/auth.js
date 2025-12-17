@@ -1,11 +1,11 @@
 const BASE_URL = "http://localhost:3001";
-
+import { handleServerResponse } from "./api";
 export const register = (name, avatar, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, avatar, email, password }),
-  }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }).then(handleServerResponse)
 };
 
 export const authorize = (email, password) => {
@@ -13,7 +13,7 @@ export const authorize = (email, password) => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
-  }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }).then(handleServerResponse)
 };
 
 export const checkToken = (token) => {
@@ -23,7 +23,7 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }).then(handleServerResponse)
 }; 
 
 //  New function to update user profile
@@ -38,5 +38,5 @@ export const updateUser = (data, token) => {
       name: data.name,
       avatar: data.avatar,
     }),
-  }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+  }).then(handleServerResponse)
 };

@@ -10,7 +10,6 @@ const ModalWithForm = ({
   children,
   secondaryButtonText,
   secondaryButtonAction,
-
 }) => (
   <div className={`modal modal_type_${name} ${isOpen ? "modal_opened" : ""}`}>
     <div className="modal__content">
@@ -23,10 +22,19 @@ const ModalWithForm = ({
       ></button>
       <form onSubmit={onSubmit} className="modal__form">
         {children}
-        <div className="modal__buttons"><button type="submit" className="modal__submit">
-          {buttonText}
-        </button>
-        {secondaryButtonText && secondaryButtonAction && <button type = "button" onClick = {secondaryButtonAction} className="modal__secondary-btn">{secondaryButtonText}</button>}
+        <div className="modal__buttons">
+          <button type="submit" className="modal__submit">
+            {buttonText}
+          </button>
+          {secondaryButtonText && secondaryButtonAction && (
+            <button
+              type="button"
+              onClick={secondaryButtonAction}
+              className="modal__secondary-btn"
+            >
+              {secondaryButtonText}
+            </button>
+          )}
         </div>
       </form>
     </div>

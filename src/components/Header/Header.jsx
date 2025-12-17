@@ -10,19 +10,11 @@ const Header = ({
   onRegister,
   handleAddClick,
   weatherData,
-  totalLikes,         // total likes from items
-  onLikeClick,        //  like handler
-  userHasLiked,       //  whether current user liked any global thing
 }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
-
-  // CSS class for global like button
-  const likeBtnClass = `header__like-btn ${
-    userHasLiked ? "header__like-btn_active" : ""
-  }`;
 
   return (
     <header className="header">
@@ -38,14 +30,6 @@ const Header = ({
 
       <div className="header__right">
         <ToggleSwitch />
-
-        {/* ----------- LIKE / DISLIKE BUTTON  ----------- }
-        {currentUser && (
-          <button className={likeBtnClass} onClick={onLikeClick}>
-             {totalLikes}
-          </button>
-        )}
-        { -------------------------------------------------------- */}
 
         {/* Add Item button only for logged-in users */}
         {currentUser && (
