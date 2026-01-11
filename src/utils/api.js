@@ -1,46 +1,54 @@
-const baseUrl = "http://localhost:3001";
+import { BASE_URL } from "../utils/constants";
 
 const headers = {
   "Content-Type": "application/json",
 };
 
-export const handleServerResponse = (res) =>
-  res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+export const handleServerResponse = (res) => {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+};
+
+export const request = (url, options) => {
+  return fetch(url, options).then(handleServerResponse);
+};
 
 /* ---------- PUBLIC ---------- */
-export const getItems = () =>
-  fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
+export const getItems = () => {
+  return request(`${BASE_URL}/items`, {
+    headers,
+  });
+};
 
 /* ---------- PROTECTED ---------- */
 export const addItem = (item, token) =>
-  fetch(`${baseUrl}/items`, {
+  request(`${BASE_URL}/items`, {
     method: "POST",
     headers: { ...headers, authorization: `Bearer ${token}` },
     body: JSON.stringify(item),
-  }).then(handleServerResponse);
+  });
 
 export const removeItem = (itemId, token) =>
-  fetch(`${baseUrl}/items/${itemId}`, {
+  request(`${BASE_URL}/items/${itemId}`, {
     method: "DELETE",
     headers: { ...headers, authorization: `Bearer ${token}` },
-  }).then(handleServerResponse);
+  });
 
 export const updateUser = ({ name, avatar }, token) =>
-  fetch(`${baseUrl}/users/me`, {
+  request(`${BASE_URL}/users/me`, {
     method: "PATCH",
     headers: { ...headers, authorization: `Bearer ${token}` },
     body: JSON.stringify({ name, avatar }),
-  }).then(handleServerResponse);
+  });
 
 /* ---------- LIKES ---------- */
 export const addCardLike = (itemId, token) =>
-  fetch(`${baseUrl}/items/${itemId}/likes`, {
+  request(`${BASE_URL}/items/${itemId}/likes`, {
     method: "PUT",
     headers: { ...headers, authorization: `Bearer ${token}` },
-  }).then(handleServerResponse);
+  });
 
 export const removeCardLike = (itemId, token) =>
-  fetch(`${baseUrl}/items/${itemId}/likes`, {
+  request(`${BASE_URL}/items/${itemId}/likes`, {
     method: "DELETE",
     headers: { ...headers, authorization: `Bearer ${token}` },
-  }).then(handleServerResponse);
+  });

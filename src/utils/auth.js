@@ -1,5 +1,6 @@
-const BASE_URL = "http://localhost:3001";
 import { handleServerResponse } from "./api";
+import { BASE_URL } from "../utils/constants";
+
 export const register = (name, avatar, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
