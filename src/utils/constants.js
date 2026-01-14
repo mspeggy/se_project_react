@@ -1,24 +1,19 @@
-const location = { latitude: "25.761681", longitude: "-80.191788" };
-const apikey = "89187817eebe6973d6406e6691db20f7";
-
-const BASE_URL =
+/* ---------------- BACKEND ---------------- */
+export const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://api.aside.ignorelist.com"
+    ? "https://api.aside.ignorelist.com" // replace with your real server IP/domain
     : "http://localhost:3001";
 
-export { location, apikey, BASE_URL };
+/* ---------------- WEATHER ---------------- */
+export const WEATHER_API_KEY = "89187817eebe6973d6406e6691db20f7";
 
+export const coordinates = {
+  latitude: 25.761681,
+  longitude: -80.191788,
+};
 
-
-
-
-
-
-
-
-
-
-/*export const weatherOptions = [
+/* ---------------- WEATHER IMAGES ---------------- */
+export const weatherOptions = [
   {
     day: true,
     condition: "clear",
@@ -43,14 +38,12 @@ export { location, apikey, BASE_URL };
 
 export const defaultWeatherOption = {
   day: {
-    url: new URL("../assets/day/default.png", import.meta.url).href,
-  },
-  night: {
-    url: new URL("../assets/night/default.png", import.meta.url).href,
-  },
+ 
+  url: new URL("../assets/day/default.png", import.meta.url).href,},
+  night:{url: new URL("../assets/day/default.png", import.meta.url).href,},
 };
 
-export const defaultClothingItems = [
+/*export const defaultClothingItems = [
   {
     _id: 1,
     name: "Boot",
@@ -152,6 +145,4 @@ export const defaultClothingItems = [
 export const coordinates = {
   latitude: 25.761681,
   longitude: -80.191788,
-};
-
-export const APIkey = "89187817eebe6973d6406e6691db20f7";*/
+};*/

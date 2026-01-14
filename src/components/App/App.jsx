@@ -19,7 +19,8 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import * as api from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
 
-import { coordinates, APIkey } from "../../utils/constants.js";
+import { coordinates, WEATHER_API_KEY } from "../../utils/constants.js";
+
 
 import "./App.css";
 
@@ -170,7 +171,7 @@ const App = () => {
 
   // ------------------- Effects -------------------
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, WEATHER_API_KEY)
       .then((data) => setWeatherData(filterWeatherData(data)))
       .catch(console.error);
     api
